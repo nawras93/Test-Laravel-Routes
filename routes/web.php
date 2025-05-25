@@ -1,12 +1,12 @@
 <?php
 
-use Admin\StatsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
-use Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,7 +87,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         // Task 11: point URL /admin/stats to a "Single Action" Admin/StatsController
         // Put one code line here below
-        Route::get('/stats', [StatsController::class, 'index']);
+        Route::get('/stats', [AdminStatsController::class]);
         // End of the /admin Route Group
     });
 // End of the Authenticated Route Group
