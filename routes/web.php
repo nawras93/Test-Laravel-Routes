@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Task 9: /admin group within a group
     // Add a group for routes with URL prefix "admin"
-    Route::prefix('admin')->middleware('is_admin')->group(function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
 
         // Tasks inside that /admin group:
         // Assign middleware called "is_admin" to them
